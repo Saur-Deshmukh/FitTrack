@@ -31,7 +31,7 @@ FitTrack is a web application designed to help users log and track their workout
     cd fittrack
     ```
 
-3. Open `index.html` in your browser to start using the application.
+3. Open `FitTrack.html` in your browser to start using the application.
 
 ## Usage
 
