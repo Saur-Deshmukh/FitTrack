@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack</title>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+    <header >
+        
+      <h1>FitTrack</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="log-workout.html">Log Workout</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+      <div class="container">
+        <div class="workout-log">
+            <h3>Log Workout</h3>
+            <form id="workout-form">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="type">Workout Type:</label>
+                <input type="text" id="type" name="type" required>
+                
+                <label for="duration">Duration (minutes):</label>
+                <input type="number" id="duration" name="duration" required>
+                
+                <label for="intensity">Intensity (1-10):</label>
+                <input type="number" id="intensity" name="intensity" min="1" max="10" required>
+                
+                <label for="notes">Notes:</label>
+                <textarea id="notes" name="notes"></textarea>
+                
+                <button type="submit">Log Workout</button>
+            </form>
+        </div>
+    </div>
+    </main>
+    
+    
+    
+    <div class="chart-container">
+      <canvas id="Workouts-chart" width="400" height="300"></canvas>
+    </div>
+    <footer>
+      <p>&copy; 2024 FitTracker</p>
+    </footer>
+    
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('Workouts-chart').getContext('2d');
+        const workouts = JSON.parse(localStorage.getItem('workouts')) || [];
+        const labels = workouts.map(workout => workout.date);
+        const data = workouts.map(workout => workout.duration);
+        const types = workouts.map(workout => workout.type)
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels,
+            datasets: [{
+                label: 'Workout Duration (minutes)',
+                data,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+
+</body>
+</html>
