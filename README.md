@@ -9,6 +9,7 @@ FitTrack is a web application designed to help users log and track their workout
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
@@ -52,6 +53,9 @@ Contributions are welcome! Please follow these steps to contribute:
 3. Make your changes and commit them: `git commit -m 'Add some feature'`.
 4. Push to the branch: `git push origin feature-name`.
 5. Open a pull request.
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 ---
 
 Feel free to explore and enhance FitTrack. If you have any questions or suggestions, please open an issue or contact us directly.
