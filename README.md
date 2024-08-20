@@ -22,13 +22,13 @@ FitTrack is a web application designed to help users log and track their workout
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/fittrack.git
+    git clone https://github.com/Saur-Deshmukh/FitTrack.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd fittrack
+    cd FitTrack
     ```
 
 3. Open `FitTrack.html` in your browser to start using the application.
